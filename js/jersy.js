@@ -15,26 +15,24 @@ const jersyForming = () => {
     let pageJersyForming2 = document.querySelector('.pageJersyForming2');
     const zxc = (money, znak) => {
         ekipJersy.slice(0, 4).forEach((qwe, key,) => {
-            pageJersyForming.innerHTML += jersyRender(qwe.img, key + 24, qwe.name, Math.round(qwe.price/money) + znak);
+            pageJersyForming.innerHTML += jersyRender(qwe.img, key + 24, qwe.name, Math.round(qwe.price / money) + znak);
         })
         ekipJersy.slice(4, 8).forEach((qwe, key) => {
-            pageJersyForming1.innerHTML += jersyRender(qwe.img, key + 28, qwe.name, Math.round(qwe.price/money) + znak);
+            pageJersyForming1.innerHTML += jersyRender(qwe.img, key + 28, qwe.name, Math.round(qwe.price / money) + znak);
         })
         ekipJersy.slice(8).forEach((qwe, key) => {
-            pageJersyForming2.innerHTML += jersyRender(qwe.img, key + 32, qwe.name, Math.round(qwe.price/money) + znak);
+            pageJersyForming2.innerHTML += jersyRender(qwe.img, key + 32, qwe.name, Math.round(qwe.price / money) + znak);
         })
     }
     const ekipJersy = ekipAll.filter((qwe, index, arr) => {
         return qwe.className === 'Jersy'
     })
-    if (currensyType === "1") {
-        zxc(1,  'p')
-    }
     if (currensyType === "2") {
-        zxc(2.5,  '$')
-    }
-    if (currensyType === "3") {
-        zxc(3.2,  '\u20ac')
+        zxc(2.5, '$')
+    } else if (currensyType === "3") {
+        zxc(3.2, '\u20ac')
+    } else {
+        zxc(1, 'p')
     }
 }
 jersyForming()

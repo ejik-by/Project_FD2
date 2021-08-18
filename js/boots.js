@@ -15,26 +15,24 @@ const bootsForming = () => {
     let pageBootsForming2 = document.querySelector('.pageBootsForming2');
     const zxc = (money, znak) => {
         ekipBoots.slice(0, 4).forEach((qwe, key,) => {
-            pageBootsForming.innerHTML += bootsRender(qwe.img, key, qwe.name, Math.round(qwe.price/money) + znak);
+            pageBootsForming.innerHTML += bootsRender(qwe.img, key, qwe.name, Math.round(qwe.price / money) + znak);
         })
         ekipBoots.slice(4, 8).forEach((qwe, key) => {
-            pageBootsForming1.innerHTML += bootsRender(qwe.img, key + 4, qwe.name, Math.round(qwe.price/money) + znak);
+            pageBootsForming1.innerHTML += bootsRender(qwe.img, key + 4, qwe.name, Math.round(qwe.price / money) + znak);
         })
         ekipBoots.slice(8).forEach((qwe, key) => {
-            pageBootsForming2.innerHTML += bootsRender(qwe.img, key + 8, qwe.name, Math.round(qwe.price/money) + znak);
+            pageBootsForming2.innerHTML += bootsRender(qwe.img, key + 8, qwe.name, Math.round(qwe.price / money) + znak);
         })
     }
     const ekipBoots = ekipAll.filter((qwe, index, arr) => {
         return qwe.className === 'Boots'
     })
-    if (currensyType === "1") {
-        zxc(1,  'p')
-    }
     if (currensyType === "2") {
-        zxc(2.5,  '$')
-    }
-    if (currensyType === "3") {
-        zxc(3.2,  '\u20ac')
+        zxc(2.5, '$')
+    } else if (currensyType === "3") {
+        zxc(3.2, '\u20ac')
+    } else {
+        zxc(1, 'p')
     }
 }
 bootsForming()

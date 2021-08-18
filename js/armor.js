@@ -15,26 +15,24 @@ const armorForming = () => {
     let pageArmorForming2 = document.querySelector('.pageArmorForming2');
     const zxc = (money, znak) => {
         ekipArmor.slice(0, 4).forEach((qwe, key,) => {
-            pageArmorForming.innerHTML += armorRender(qwe.img, key + 48, qwe.name, Math.round(qwe.price/money) + znak)
+            pageArmorForming.innerHTML += armorRender(qwe.img, key + 48, qwe.name, Math.round(qwe.price / money) + znak)
         })
         ekipArmor.slice(4, 8).forEach((qwe, key) => {
-            pageArmorForming1.innerHTML += armorRender(qwe.img, key + 52, qwe.name, Math.round(qwe.price/money) + znak);
+            pageArmorForming1.innerHTML += armorRender(qwe.img, key + 52, qwe.name, Math.round(qwe.price / money) + znak);
         })
         ekipArmor.slice(8).forEach((qwe, key) => {
-            pageArmorForming2.innerHTML += armorRender(qwe.img, key + 56, qwe.name, Math.round(qwe.price/money) + znak);
+            pageArmorForming2.innerHTML += armorRender(qwe.img, key + 56, qwe.name, Math.round(qwe.price / money) + znak);
         })
     }
     const ekipArmor = ekipAll.filter((qwe, index, arr) => {
         return qwe.className === 'Armor'
     })
-    if (currensyType === "1") {
-        zxc(1,  'p')
-    }
     if (currensyType === "2") {
-        zxc(2.5,  '$')
-    }
-    if (currensyType === "3") {
-        zxc(3.2,  '\u20ac')
+        zxc(2.5, '$')
+    } else if (currensyType === "3") {
+        zxc(3.2, '\u20ac')
+    } else {
+        zxc(1, 'p')
     }
 }
 armorForming()
